@@ -161,7 +161,7 @@ footer {
     border-color: red;
 }
 
-.error input.inputFields, .error textarea {
+.error input.inputFields, .error textarea, .error select {
     border-color: red;
 }
 

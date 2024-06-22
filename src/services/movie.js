@@ -11,7 +11,9 @@ async function getMovieById(id) {
 }
 
 async function createMovie(movieData) {
-    const movie =  new Movie ({
+    
+
+    const movie = new Movie({
         title: movieData.title,
         genre: movieData.genre,
         director: movieData.director,
@@ -27,8 +29,24 @@ async function createMovie(movieData) {
     return movie;
 }
 
+
+async function attachCastToMovie(movieId, castId) {
+    const movie = await Movie.getById(movieId);
+
+    if (movie == null) {
+        throw new Error(`Movie ${MovieId} not found`)
+    }
+
+    movie.cast.push(castId);
+
+    await movie.save();
+
+    return movie;
+}
+
 module.exports = {
     getAllMovies,
     getMovieById,
-    createMovie
+    createMovie,
+    attachCastToMovie
 }
