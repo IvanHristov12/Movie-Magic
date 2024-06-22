@@ -155,6 +155,7 @@ footer {
     animation-fill-mode: forwards;
 }
 
+
 .error label {
     color: red;
     border-color: red;
@@ -163,6 +164,7 @@ footer {
 .error input.inputFields, .error textarea {
     border-color: red;
 }
+
 
 @keyframes cssAnimation {
     to {
